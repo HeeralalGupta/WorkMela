@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,7 @@
 	<meta name="viewport"
 		content="width=device-width, 
 				initial-scale=1.0">
-	<title>WorkMela Dashboard</title>
+	<title>Dashboard</title>
 	<link rel="stylesheet"
 		href="assets/css/dashboard.css">
 	<link rel="stylesheet"
@@ -62,11 +65,20 @@ ul li:hover ul.dropdown{
 ul li ul.dropdown li{
     display: block;
 }
+
 </style>
+
 </head>
 
 <body>
-
+	
+	<% 
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // Preventing from back after logout.
+		if(session.getAttribute("email").toString() == null){
+			response.sendRedirect("views/login.jsp");
+		}
+	%>
+	
 	<!-- for header part -->
 	<header>
 
@@ -105,6 +117,11 @@ ul li ul.dropdown li{
 					</ul>
 				</li>
 			</ul>
+			<%	
+				out.print("Welcome ");
+				String name = session.getAttribute("firstName").toString();
+				out.print(name);
+			%>
 		</div>
 
 	</header>
@@ -124,41 +141,41 @@ ul li ul.dropdown li{
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
 							class="nav-img"
 							alt="articles">
-						<h3>Post Jobs</h3>
+						<h3>Jobs</h3>
 					</div>
 
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
 							class="nav-img"
 							alt="report">
-						<h3>Post Internship</h3>
+						<h3>Internship</h3>
 					</div>
 
 					<div class="nav-option option4">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
 							class="nav-img"
 							alt="institution">
-						<h3>Post Courses</h3>
+						<h3>Courses</h3>
 					</div>
 
 					<div class="nav-option option5">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png"
 							class="nav-img"
 							alt="blog">
-						<h3> Profile</h3>
+						<h3>Profile</h3>
 					</div>
 
 					<div class="nav-option option6">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png"
 							class="nav-img"
 							alt="settings">
-						<h3> Settings</h3>
+						<h3>Help</h3>
 					</div>
 
 					<form action = "logout" method="post">
 						<div class="nav-option logout">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
-						<h3><a href="logout">Logout</a></h3>
+						<button type = "submit" class = "logout">Logout</button>
 					</div>
 					</form>
 
@@ -304,7 +321,7 @@ ul li ul.dropdown li{
 			</div>
 		</div>
 	</div>
-
+	
 	<script>
 		let menuicn = document.querySelector(".menuicn");
 		let nav = document.querySelector(".navcontainer");

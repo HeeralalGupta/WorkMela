@@ -17,8 +17,9 @@ font-family: "Poppins", sans-serif;
 --primary-color: #4b49ac;
 --secondary-color: #0c007d;
 --Border-color: #3f0097;
---one-use-color: #3f0097;
+--one-use-color: rgb(220, 229, 253);
 --two-use-color: #5500cb;
+
 }
 body {
 background-color: var(--background-color4);
@@ -42,7 +43,7 @@ align-items: center;
 .logo {
 font-size: 27px;
 font-weight: 600;
-color: rgb(47, 141, 70);
+color: #dce5fd;
 }
 
 .icn {

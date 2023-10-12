@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,31 +76,12 @@
 		color: #fff;
 		background: #5969f3;
 	}
-	.captcha{
-		margin-bottom: 15px;
-		
-	}
-	.g-recaptcha {
-		transform:scale(1.15, 0.9);
-   		-webkit-transform:scale(1.15, 0.9);
-    	transform-origin:0 0;
-    	-webkit-transform-origin:0 0;
-	}
-	#g-recaptcha-response {
-  		display: block !important;
-  		position: absolute;
-  		margin: -78px 0 0 0 !important;
-  		width: 302px !important;
-  		height: 76px !important;
-  		z-index: -999999;
-  		opacity: 0;
-	}
 </style>
 	  
 </head>
 
 <body>
-	<!--<script>alert("You have registered successfully")</script>-->
+	
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -108,15 +93,12 @@
 	
       <nav id="navbar" class="navbar">
         <ul>
-          <!--<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
+      
           <li><a class="nav-link scrollto" href="#">Courses</a></li>
           <li><a class="nav-link scrollto" href="#">Internship</a></li>
           <li><a class="nav-link scrollto" href="#">Jobs</a></li>
           
-        
-          <!--<li><a class="nav-link scrollto" href="#contact">Contact</a></li>-->
+          
           <li><a class="getstartedlogin scrollto" href="login">Login</a></li>
           <li><a class="getstarted scrollto" href="register">Register</a></li>
           
@@ -130,29 +112,61 @@
       </nav><!-- .navbar -->
 
     </div>
-  </header>
-  <!-- End Header -->
+  </header><!-- End Header -->
 
-  <!--Login form start-->
+<!--Registration form-->
 	<div class="form_wrapper">
 	  <div class="form_container">
 	    <div class="title_container">
-	      <h2>Login</h2>
+	      <h2>Register</h2>
+	      <font color="red">${validateEmail}</font>
 	    </div>
 	    <div class="row clearfix">
 	      <div class="">
-	        <form action="login" method="post">
+	        <form action = "register" method="post">
 	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
 	            <input type="email" name="email" placeholder="Email" required />
 	          </div>
 	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
 	            <input type="password" name="password" placeholder="Password" required />
 	          </div>
-	   	      <div class="g-recaptcha captcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
-               
-	          <input class="button" type="submit" value="Login" />
+	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+	            <input type="password" name="confirmpassword" placeholder="Re-type Password" required />
+	          </div>
+	          <div class="row clearfix">
+	            <div class="col_half">
+	              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+	                <input type="text" name="firstname" placeholder="First Name" />
+	              </div>
+	            </div>
+	            <div class="col_half">
+	              <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+	                <input type="text" name="lastname" placeholder="Last Name" required />
+	              </div>
+	            </div>
+	          </div>
+	            	<div class="input_field radio_option">
+	              <input type="radio" value="male" name="gender" id="rd1">
+	              <label for="rd1">Male</label>
+	              <input type="radio" value="female" name="gender" id="rd2">
+	              <label for="rd2">Female</label>
+	              </div>
+	              <div class="input_field select_option">
+	                <select name = "nationality">
+	                  <option>Select a Nationality</option>
+	                  <option>Indian</option>
+	                  <option>Non-Indian</option>
+	                </select>
+	                <div class="select_arrow"></div>
+	              </div>
+	            <div class="input_field checkbox_option">
+	            	<input type="checkbox" id="cb1">
+	    			<label for="cb1">I agree with terms and conditions</label>
+	            </div>
+	           
+	          <input class="button" type="submit" value="Register" />
 	          <div class="input_field mb-4">
-	    			<center><label for="cb1">Are you new user? </label><a href="register"> Register</a></center>
+	    			<center><label for="cb1">Already Registered ? </label><a href="login"> Login</a></center>
 	            </div>
 	        </form>
 	        
@@ -160,8 +174,8 @@
 	    </div>
 	  </div>
 	</div>
-  <!--Login form ends--> 
-	
+<!--Registration fom end-->
+
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
@@ -175,20 +189,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  
-  <!--you can put this line anywhere in the site-->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<!--Making google recaptcha is required-->
-<script>
-		window.addEventListener('load', () => {
-			const $recaptcha = document.querySelector('#g-recaptcha-response');
-			if ($recaptcha) {
-				$recaptcha.setAttribute('required', 'required');
-			}
-		})
-</script>
-	
 </body>
 
 </html>
