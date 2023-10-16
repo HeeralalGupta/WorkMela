@@ -32,16 +32,15 @@ ul li{
     position: relative;
     line-height: 21px;
     text-align: center;
-    background-color: #fafaff;
+    
 }
 ul li a{
     display: block;
-    padding: 5px 25px 5px 15px;
+    padding: 6px 25px 8px 12px;
     color: #333;
     text-decoration: none;
     
 }
-
 ul li a:hover{
     color: #fff;
     background: darkslategrey;
@@ -86,7 +85,7 @@ ul li ul.dropdown li{
 	
 	<% 
 		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // Preventing from back after logout.
-		if(session.getAttribute("email").toString() == null){
+		if(session.getAttribute("emailHT").toString() == null){
 			response.sendRedirect("views/login.jsp");
 		}
 	%>
@@ -95,7 +94,7 @@ ul li ul.dropdown li{
 	<header>
 
 		<div class="logosec">
-			<div class="logo">WorkMela</div>
+			<div class="logo">Hire Talent</div>
 			<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
 				class="icn menuicn"
 				id="menuicn"
@@ -114,13 +113,13 @@ ul li ul.dropdown li{
 
 		<div class="message">
 			<div class="circle"></div>
-			<!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
+			<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
 				class="icn"
-				alt=""> -->
+				alt="">
 			<ul>
 				<li>
 					<div class="dp">
-						<img src="assets/img/av.png"
+						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
 							class="dpicn" alt="dp">
 					</div>
 					<ul class="dropdown">
@@ -129,9 +128,10 @@ ul li ul.dropdown li{
 					</ul>
 				</li>
 			</ul>
-			<%	
-				String name = session.getAttribute("firstName").toString();
-				out.print(name);
+			<%
+			out.print("Welcome ");
+			String name = session.getAttribute("firstNameHT").toString();
+			out.print(name);
 			%>
 		</div>
 
@@ -152,21 +152,21 @@ ul li ul.dropdown li{
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png"
 							class="nav-img"
 							alt="articles">
-						<h3>Jobs</h3>
+						<h3>Post Jobs</h3>
 					</div>
 
 					<div class="nav-option option3">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png"
 							class="nav-img"
 							alt="report">
-						<h3>Internship</h3>
+						<h3>Post Internship</h3>
 					</div>
 
 					<div class="nav-option option4">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png"
 							class="nav-img"
 							alt="institution">
-						<h3>Courses</h3>
+						<h3>Post Courses</h3>
 					</div>
 
 					<div class="nav-option option5">
@@ -183,8 +183,8 @@ ul li ul.dropdown li{
 						<h3>Help</h3>
 					</div>
 
-					<form action = "logout" method="post">
-						<div class="nav-option logout">
+					<form action = "logoutHTUser" method="post">
+						<div class="nav-option">
 						<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
 						<button type = "submit" class = "btnLogout">Logout</button>
 					</div>
@@ -208,11 +208,11 @@ ul li ul.dropdown li{
 			</div>
 
 			<div class="box-container">
-
+			
 				<div class="box box1">
 					<div class="text">
 						<h2 class="topic-heading">60.5k</h2>
-						<h2 class="topic">Jobs Applied</h2>
+						<h2 class="topic">All Jobs</h2>
 					</div>
 
 					<img src="assets/img/jobs.png"
@@ -222,7 +222,7 @@ ul li ul.dropdown li{
 				<div class="box box2">
 					<div class="text">
 						<h2 class="topic-heading">150</h2>
-						<h2 class="topic">Internship Applied</h2>
+						<h2 class="topic">All Internship</h2>
 					</div>
 
 					<img src="assets/img/internship.png"
@@ -232,7 +232,7 @@ ul li ul.dropdown li{
 				<div class="box box3">
 					<div class="text">
 						<h2 class="topic-heading">320</h2>
-						<h2 class="topic">Courses Purchased</h2>
+						<h2 class="topic">All Course </h2>
 					</div>
 
 					<img src="assets/img/courses.png"
@@ -242,12 +242,14 @@ ul li ul.dropdown li{
 				<div class="box box4">
 					<div class="text">
 						<h2 class="topic-heading">70</h2>
-						<h2 class="topic">Total Data</h2>
+						<h2 class="topic">All Hired</h2>
 					</div>
 
 					<img src="assets/img/hired.png" alt="published">
 				</div>
 			</div>
+
+	
 
 			<div class="report-container">
 				<div class="report-header">
@@ -299,33 +301,7 @@ ul li ul.dropdown li{
 							<h3 class="t-op-nextlvl label-tag">Published</h3>
 						</div>
 
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 68</h3>
-							<h3 class="t-op-nextlvl">1.9k</h3>
-							<h3 class="t-op-nextlvl">390</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 67</h3>
-							<h3 class="t-op-nextlvl">1.2k</h3>
-							<h3 class="t-op-nextlvl">580</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 66</h3>
-							<h3 class="t-op-nextlvl">3.6k</h3>
-							<h3 class="t-op-nextlvl">160</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
-
-						<div class="item1">
-							<h3 class="t-op-nextlvl">Article 65</h3>
-							<h3 class="t-op-nextlvl">1.3k</h3>
-							<h3 class="t-op-nextlvl">220</h3>
-							<h3 class="t-op-nextlvl label-tag">Published</h3>
-						</div>
+						
 
 					</div>
 				</div>

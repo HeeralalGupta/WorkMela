@@ -18,7 +18,7 @@ font-family: "Poppins", sans-serif;
 --secondary-color: #0c007d;
 --Border-color: #3f0097;
 --one-use-color: rgb(220, 229, 253);
---two-use-color: #5500cb;
+--two-use-color: rgb(220, 229, 253);
 
 }
 body {
@@ -43,7 +43,7 @@ align-items: center;
 .logo {
 font-size: 27px;
 font-weight: 600;
-color: #dce5fd;
+color: #0c007d;
 }
 
 .icn {
@@ -107,7 +107,7 @@ top: 8px;
 .dp {
 height: 40px;
 width: 40px;
-background-color: transparent;
+background-color: none;
 border-radius: 50%;
 display: flex;
 align-items: center;
@@ -219,7 +219,7 @@ background-color: var(--Border-color);
 }
 .box {
 height: 130px;
-width: 230px;
+width: 260px;
 border-radius: 20px;
 box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
 padding: 20px;
@@ -247,10 +247,10 @@ background-color: var(--two-use-color);
 }
 
 .box img {
-height: 50px;
+height: 60px;
 }
 .box .text {
-color: white;
+color: #0c007d;
 }
 .topic {
 font-size: 13px;
@@ -265,7 +265,7 @@ letter-spacing: 3px;
 
 .report-container {
 min-height: 300px;
-max-width: 1200px;
+max-width: 1300px;
 margin: 70px auto 0px auto;
 background-color: #ffffff;
 border-radius: 30px;

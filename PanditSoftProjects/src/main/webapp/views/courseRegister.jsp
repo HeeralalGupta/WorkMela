@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login</title>
+  <title>Course Register</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -103,6 +103,24 @@
 		
 	}
 	
+/* Banner */
+ .back{
+ 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/coursess-banner.jpg);
+    width: 100%;
+    height: 200px;
+ }
+ .head{
+ 	margin-top: 80px;
+    text-align: center;
+    font-weight: bold;
+    font-family: monospace;
+    color: white;
+    padding-top: 50px;
+ }
+
+.register-course{
+	margin-top: 60px;
+}
 </style>
 	 <script type="text/javascript"> 
         window.history.forward(); 
@@ -127,15 +145,11 @@
 	
       <nav id="navbar" class="navbar">
         <ul>
-          <!--<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
+         
           <li><a class="nav-link scrollto" href="course">Courses</a></li>
           <li><a class="nav-link scrollto" href="internship">Internship</a></li>
           <li><a class="nav-link scrollto" href="jobs">Jobs</a></li>
-          
-        
-          <!--<li><a class="nav-link scrollto" href="#contact">Contact</a></li>-->
+
           <li><a class="getstartedlogin scrollto" href="login">Login</a></li>
           <li><a class="getstarted scrollto" href="register">Register</a></li>
           
@@ -151,51 +165,87 @@
     </div>
   </header>
   <!-- End Header -->
-	<div class = "container">
-		<div class = "row mt-4 pt-4">
-			<div class = "col-sm-4 text-center mt-4 mx-auto">
-				<%
-				if(session.getAttribute("registerSuccess") != null){
-					out.print("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Success!</strong> Your registration has done.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button> </div>");
-				}
-				%>
+ <!-- Banner starts -->
+	 <div class= "container-fluid back">
+	 	<div class = "row mx-auto head">
+	 		<div class = "col-sm-12 mx-auto">
+	 			<h1>Courses Register</h1>
+	 			<p>Find your jobs related and get success</p>
+	 		</div>
+	 	</div>
+	 </div>
+  <!-- Banner ends -->
+  
+
+
+	<!--Registration form-->
+	<div class="form_wrapper register-course">
+		<div class="form_container">
+			<div class="title_container">
+				<h2>Course Register</h2>
+				<font color="red">${validateEmail}</font>
+			</div>
+			<div class="row clearfix">
+				<div class="">
+					<form action="usercourseregister" method="post">
+						<div class="input_field">
+							<span><i aria-hidden="true" class="fa fa-envelope"></i></span> <input
+								type="email" name="email" placeholder="Email" required />
+						</div>
+						<div class="input_field">
+							<span><i aria-hidden="true" class="fa fa-phone"></i></span> <input
+								type="text" name="mobNo" placeholder="Mob.No" required />
+						</div>
+						<div class="input_field">
+							<span><i aria-hidden="true" class="fa fa-lock"></i></span> <input
+								type="text" name="address" placeholder="Address" required />
+						</div>
+						<div class="row clearfix">
+							<div class="col_half">
+								<div class="input_field">
+									<span><i aria-hidden="true" class="fa fa-user"></i></span> <input
+										type="text" name="firstName" placeholder="First Name" />
+								</div>
+							</div>
+							<div class="col_half">
+								<div class="input_field">
+									<span><i aria-hidden="true" class="fa fa-user"></i></span> <input
+										type="text" name="lastName" placeholder="Last Name" required />
+								</div>
+							</div>
+						</div>
+						<div class="input_field radio_option">
+							<input type="radio" value="male" name="gender" id="rd1">
+							<label for="rd1">Male</label> <input type="radio" value="female"
+								name="gender" id="rd2"> <label for="rd2">Female</label>
+						</div>
+						<div class="input_field select_option">
+							<select name="nationality">
+								<option>Graduation</option>
+								<option>B.Tech</option>
+								<option>B.A</option>
+								<option>MCA</option>
+								<option>BCA</option>
+								<option>Non-Tech</option>
+								<option>M.Tech</option>
+								<option>BSc</option>
+							</select>
+							<div class="select_arrow"></div>
+						</div>
+						<div class="input_field checkbox_option">
+							<input type="checkbox" id="cb1"> <label for="cb1">I
+								agree with terms and conditions</label>
+						</div>
+						<input class="button" type="submit" value="Register" />
+						
+					</form>
+				</div>
 			</div>
 		</div>
-		
 	</div>
-	<!--Login form start-->
-	<div class="form_wrapper">
-	
-		
-	
-	  <div class="form_container">
-	  
-	    <div class="title_container">
-	      <h2>Login</h2>
-	      <font color="red">${errorMessage}</font>
-	    </div>
-	    <div class="row clearfix">
-	      <div class="">
-	        <form action="login" method="post">
-	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-	            <input type="email" name="email" placeholder="Email" required />
-	          </div>
-	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-	            <input type="password" name="password" placeholder="Password" required />
-	          </div>
-	   	      <div class="g-recaptcha captcha" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
-               
-	          <input class="button" type="submit" value="Login" />
-	          <div class="input_field mb-4">
-	    			<center><label for="cb1">Are you new user? </label><a href="register"> Register</a></center>
-	            </div>
-	        </form>
-	        
-	      </div>
-	    </div>
-	  </div>
-	</div>
-  <!--Login form ends--> 
+	<!--Registration fom end-->
+
+ 
 	
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

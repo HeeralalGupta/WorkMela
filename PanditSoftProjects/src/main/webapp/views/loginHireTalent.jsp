@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Login</title>
+  <title>Login Hire Talent</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -155,7 +154,7 @@
 		<div class = "row mt-4 pt-4">
 			<div class = "col-sm-4 text-center mt-4 mx-auto">
 				<%
-				if(session.getAttribute("registerSuccess") != null){
+				if(session.getAttribute("registerHTSuccess") != null){
 					out.print("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Success!</strong> Your registration has done.<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button> </div>");
 				}
 				%>
@@ -171,14 +170,14 @@
 	  <div class="form_container">
 	  
 	    <div class="title_container">
-	      <h2>Login</h2>
-	      <font color="red">${errorMessage}</font>
+	      <h2>Login as Recruiter</h2>
+	      <font color="red">${errorMessageHT}</font>
 	    </div>
 	    <div class="row clearfix">
 	      <div class="">
-	        <form action="login" method="post">
+	        <form action="loginHTUser" method="post">
 	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-	            <input type="email" name="email" placeholder="Email" required />
+	            <input type="email" name="email" placeholder="Company Email" required />
 	          </div>
 	          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
 	            <input type="password" name="password" placeholder="Password" required />
@@ -187,7 +186,7 @@
                
 	          <input class="button" type="submit" value="Login" />
 	          <div class="input_field mb-4">
-	    			<center><label for="cb1">Are you new user? </label><a href="register"> Register</a></center>
+	    			<center><label for="cb1">Are you new user? </label><a href="registerHireTalent"> Register</a></center>
 	            </div>
 	        </form>
 	        

@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Job Mela</title>
+  <title>Register</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -81,7 +81,6 @@
 </head>
 
 <body>
-	
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -94,9 +93,9 @@
       <nav id="navbar" class="navbar">
         <ul>
       
-          <li><a class="nav-link scrollto" href="#">Courses</a></li>
-          <li><a class="nav-link scrollto" href="#">Internship</a></li>
-          <li><a class="nav-link scrollto" href="#">Jobs</a></li>
+          <li><a class="nav-link scrollto" href="course">Courses</a></li>
+          <li><a class="nav-link scrollto" href="internship">Internship</a></li>
+          <li><a class="nav-link scrollto" href="jobs">Jobs</a></li>
           
           
           <li><a class="getstartedlogin scrollto" href="login">Login</a></li>
@@ -106,7 +105,7 @@
 				<div class="vr"></div>
 			</div>
 			
-          <li><a class="nav-link scrollto" href="#">Hire Talent</a></li>
+          <li><a class="nav-link scrollto" href="registerHireTalent">Hire Talent</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -91,9 +91,9 @@
           <!--<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
-          <li><a class="nav-link scrollto" href="#">Courses</a></li>
-          <li><a class="nav-link scrollto" href="#">Internship</a></li>
-          <li><a class="nav-link scrollto" href="#">Jobs</a></li>
+          <li><a class="nav-link scrollto" href="course">Courses</a></li>
+          <li><a class="nav-link scrollto" href="internship">Internship</a></li>
+          <li><a class="nav-link scrollto" href="jobs">Jobs</a></li>
           
           <!--<li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>-->
           <!--<li><a class="nav-link scrollto" href="#team">Team</a></li>-->
@@ -149,7 +149,7 @@
 				<div class="vr"></div>
 			</div>
 			
-          <li><a class="nav-link scrollto" href="#">Hire Talent</a></li>
+          <li><a class="nav-link scrollto" href="registerHireTalent">Hire Talent</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -1375,7 +1375,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="#">PanditSoft Pvt. Ltd.</a>
+        Designed by <a href="https://panditsoft.in/">PanditSoft Pvt. Ltd.</a>
       </div>
     </div>
   </footer><!-- End Footer -->
